@@ -1,0 +1,91 @@
+#include <stdio.h>
+
+int main()
+{
+    float ncf, ncm, nm35exp, miexp, idade, sexo, experiencia, imhexp, ph45th, nhexps;
+    int cont;
+    idade = 1;
+    ncm = 0;
+    ncf = 0;
+    miexp = 0;
+    ph45th = 0;
+    nm35exp = 0;
+    nhexps = 0;
+    miexp = 200;
+    cont = 0;
+    printf("Programa de reconhecimento dos concorrentes à vaga de trabalho.\nAntes de começar, informo que ao ser digitado o número 0 para idade, o programa será encerrado.\n");
+    while(idade != 0)
+    {
+        printf("Digite sua idade: ");
+        scanf("%f", &idade);
+        if(idade > 0)
+        {
+            printf("Escolha o sexo. Digite 1 para masculino e 2 para femenino: ");
+            scanf("%f", &sexo);
+            printf("Informe sua experiência. Digite 1 caso possua experiência, caso contrário digite 2: ");
+            scanf("%f", &experiencia);
+            if(sexo == 1)
+            {
+                ncm = ncm + 1;
+                if(experiencia == 1)
+                {
+                    imhexp = imhexp + idade;
+                    nhexps++;
+                }
+                if(idade >= 45)
+                {
+                    ph45th = ph45th + 1;
+                }
+            cont++;
+            }
+            else if(sexo == 2)
+            {
+                ncf = ncf + 1;
+                if((experiencia == 1) && (idade < 35))
+                {
+                    nm35exp = nm35exp + 1;
+                }
+                if((experiencia == 1) && (idade <= miexp))
+                {
+                    miexp = idade;
+                }
+            cont++;
+            }
+            if((sexo < 1) || (sexo > 2) || (experiencia > 2) || (experiencia < 1))
+            {
+                printf("Algum dos valores digitados para sexo ou experiência retornou inválido.\nTentativa não computada.\nTente novamente.\n");
+            }
+        }
+        else if(idade == 0)
+        {
+            printf("Você digitou 0. \nPrograma encerrado. \nConfira os resultados:\n");
+        }
+        else if(idade < 0)
+        {
+            printf("Você digitou uma idade inválida. Tentativa não computada.\nTente novamente.\n");
+        }
+    }
+    imhexp = imhexp / nhexps;
+    ph45th = (ph45th / ncm) * 100.0;
+    if(cont <= 1)
+        {
+            if (sexo != 1)
+            {
+                imhexp = 0;
+                ncm = 0;
+                ph45th = 0;
+            }
+        }
+    if(miexp == 200)
+    {
+        miexp = 0;
+    }
+    printf("Número de candidatos do sexo feminino: %.0f; \n", ncf);
+    printf("Número de candidatos do sexo masculino: %.0f; \n", ncm);
+    printf("Idade média dos homens que já têm experiência no serviço: %.1f; \n", imhexp);
+    printf("Porcentagem dos homens com mais de 45 anos entre o total dos homens: %.2f; \n", ph45th);
+    printf("Número de mulheres com idade inferior a 35 anos e com experiência no serviço: %.0f; \n", nm35exp);
+    printf("Menor idade entre as mulheres que já têm experiência no serviço.: %.0f. \n", miexp);
+
+    return 0;
+}

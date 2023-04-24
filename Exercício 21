@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2, dividido, aux, cont, reveladora;
+    printf("Digite dois números. Você verá quais números dentre o intervalo escolhido são primos.\n");
+    scanf("%i", &n1);
+    scanf("%i", &n2);
+    reveladora = 0;
+    while(n1 <= n2)
+    {
+        for(cont=1; cont<=n1; cont++)
+        {
+            if((n1%cont) == 0)
+            {
+                reveladora++;
+            }
+        }
+        printf("%i ", reveladora);
+        n1++;
+        reveladora = 0;
+    }
+    
+    
+    
+    
+
+    
+    return 0;
+}

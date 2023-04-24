@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main(){
+
+    float salario, filhos, mediaSalario = 0.0, mediaFilhos = 0.0, maiorSalario = 0.0, menor100Sal = 0.0, cont;
+    cont = 0;
+    filhos = 0;
+    salario = 0;
+    
+    printf("Início do programa. Caso deseja encerrar o programa, digite -1 quando perguntado o número de filhos.\n");
+    while(filhos != -1.0){
+    printf("Quantos filhos você possui?\n");
+        scanf("%f", &filhos);
+        if(filhos > -1.0){
+            printf("Informe seu salário: ");
+            scanf("%f", &salario);
+            if(salario>=0.0){
+                mediaSalario = mediaSalario + salario;
+                mediaFilhos = mediaFilhos + filhos;
+                if(salario>=maiorSalario){
+                    maiorSalario = salario;
+                }
+                if(salario<=100.0){
+                    menor100Sal++;
+                }
+                cont++;
+            }
+        }
+        else if((filhos!= -1.0) && (filhos<-1.0 ||  salario<0.0)){
+            printf("Algum ou ambos os valores, número de filhos ou salário, foi ou foram informados incorretamente.\nTentativa não computada.\n");
+        }
+        else if(filhos == -1.0){
+            printf("Programa encerrado.\n");
+        }
+    }
+    mediaSalario = mediaSalario / cont;
+    mediaFilhos = mediaFilhos / cont;
+    menor100Sal = (menor100Sal / cont) * 100.0;
+    printf("Média de Filhos: %.2f;\n", mediaFilhos);
+    printf("Média Salarial: %.2f;\n", mediaSalario);
+    printf("Maior Salário: %.2f;\n", maiorSalario);
+    printf("Porcentagem de pessoas com salário menor que R$ 100,00: %.2f%%.\n", menor100Sal);
+
+    return 0;
+}

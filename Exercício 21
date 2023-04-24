@@ -3,28 +3,41 @@
 int main()
 {
     int n1, n2, dividido, aux, cont, reveladora;
-    printf("Digite dois números. Você verá quais números dentre o intervalo escolhido são primos.\n");
+    printf("Digite dois números naturais. Você verá quais números dentre o intervalo escolhido são primos.\n");
+    printf("n1: ");
     scanf("%i", &n1);
+    printf("n2: ");
     scanf("%i", &n2);
     reveladora = 0;
-    while(n1 <= n2)
+    if((n1 >= n2) && (n2 >= 0))
     {
-        for(cont=1; cont<=n1; cont++)
-        {
-            if((n1%cont) == 0)
-            {
-                reveladora++;
-            }
-        }
-        printf("%i ", reveladora);
-        n1++;
-        reveladora = 0;
+        aux = n1;
+        n1 = n2;
+        n2 = aux;
     }
-    
-    
-    
-    
-
+    if((n1>=0 && n2>0) || (n1>0 && n2>=0))
+    {
+        while(n1 <= n2)
+        {
+            for(cont=1; cont<=n1; cont++)
+            {
+                if((n1%cont) == 0)
+                {
+                    reveladora++;
+                }
+            }
+            if((reveladora <= 2) && (n1 > 0) && (n2 > 0))
+            {
+                printf("%i é um número primo.\n", n1);
+            }
+            n1++;
+            reveladora = 0;
+        }
+    }
+    else if(((n1 == n2) && (n2 == 0)) || ((n1 < 0) || (n2 < 0)))
+    {
+        printf("Algum ou ambos dos valores digitados não preenchem os requisitos para fornecer qualquer número primo.\nReinicie o programa.\n");
+    }
     
     return 0;
 }

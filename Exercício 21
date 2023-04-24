@@ -9,8 +9,8 @@ int main()
     printf("n2: ");
     scanf("%i", &n2);
     reveladora = 1;
-    if((n1 >= n2) && (n2 >= 0))
-    {
+    
+    if((n1 >= n2) && (n2 >= 0)){
         aux = n1;
         n1 = n2;
         n2 = aux;

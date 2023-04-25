@@ -29,6 +29,8 @@ int main()
         mediaPesoTime = mediaPesoTime / 23;
         printf("Média de peso do time %.0f: %.2f;\n", contTimes, mediaPesoTime);
         printf("Média de altura do time %.0f: %.2f;\n", contTimes, mediaAltTime);
+        mediaAltTime = 0;
+        mediaPesoTime = 0;
     }
     mediaAltGeral = mediaAltGeral / 920;
     mediaPesoGeral = mediaPesoGeral / 920;

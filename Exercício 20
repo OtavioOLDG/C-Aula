@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    float jogadorPeso[23];
+    float jogadorAltura[23];
+    float contTimes, mediaAltTime=0.0, mediaAltGeral=0.0, mediaPesoTime=0.0, mediaPesoGeral=0.0;
+    int i;
+    
+    for(contTimes=1.0; contTimes<=40.0; contTimes++){
+        for(i=0; i<23; i++){
+            printf("Informe a altura e peso do %iº jogador do %.0fº time.\n", i+1, contTimes);
+            printf("Peso: ");
+            scanf("%f", &jogadorPeso[i]);
+            printf("Altura: ");
+            scanf("%f", &jogadorAltura[i]);
+            if((jogadorAltura[i]>0.0) && (jogadorPeso[i]>0.0)){
+                mediaPesoTime = mediaPesoTime + jogadorPeso[i];
+                mediaAltTime = mediaAltTime + jogadorAltura[i];
+                mediaAltGeral = mediaAltGeral + jogadorAltura[i];
+                mediaPesoGeral = mediaPesoGeral + jogadorPeso[i];
+            }
+            else if(jogadorAltura[i] <= 0.0 || jogadorPeso[i] <= 0.0){
+                printf("Algum dos dados retornou inválido. Tentativa não computada.\n");
+                i--;
+            }
+        }
+        mediaAltTime = mediaAltTime / 23;
+        mediaPesoTime = mediaPesoTime / 23;
+        printf("Média de peso do time %.0f: %.2f;\n", contTimes, mediaPesoTime);
+        printf("Média de altura do time %.0f: %.2f;\n", contTimes, mediaAltTime);
+    }
+    mediaAltGeral = mediaAltGeral / 920;
+    mediaPesoGeral = mediaPesoGeral / 920;
+    printf("Média de peso do campeonato: %.2f;\n", mediaPesoGeral);
+    printf("Média de altura do campeonato: %.2f;\n", mediaAltGeral);
+
+    return 0;
+}

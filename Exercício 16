@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    float populacaoA, populacaoB;
+    int ano, cont;
+    populacaoA = 90000000;
+    populacaoB = 140000000;
+    cont = 0;
+    
+    printf("Informe o ano atual: ");
+    scanf("%i", &ano);
+    while(populacaoA < populacaoB){
+        populacaoA = populacaoA * 1.035;
+        populacaoB = populacaoB * 1.01;
+        cont++;
+    }
+    ano+=cont;
+    printf("Ano que ultrapassou: %i;\n", ano);
+    printf("População do país A: %.0f;\n", populacaoA);
+    printf("População do país B: %.0f.\n", populacaoB);
+
+    return 0;
+}

@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    float altura, maiorAltura = 0.0, mediaAltura = 0.0;
+    int cont, nPessoas2M, stop;
+    nPessoas2M = 0;
+    cont = 0;
+    stop = 1;
+    
+    while(cont<20 && stop!=0){
+        printf("Informe a altura do %iº aluno: ", cont+1);
+        scanf("%f", &altura);
+        if(altura>0){
+            mediaAltura+=altura;
+            if(altura>maiorAltura){
+                maiorAltura = altura;
+            }
+            if(altura>2.0){
+                nPessoas2M++;
+            }
+            cont++;
+        }
+        else{
+            printf("Tentativa inválida.\n\n");
+        }
+        printf("Deseja encerrar? Se positivo digite 0, caso contrário digite qualquer número: ");
+        scanf("%i", &stop);
+        
+    }
+    mediaAltura/=(float)cont;
+    printf("Média de altura: %.2f;\n", mediaAltura);
+    printf("Maior altura: %.2f;\n", maiorAltura);
+    printf("Quantidade de alunos com mais de 2 metros: %i.\n\n", nPessoas2M);
+    
+
+    return 0;
+}

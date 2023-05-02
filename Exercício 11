@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, soma=0;
+    
+    for(n=1; n<=100; n++){
+        soma+=n;
+        printf("%i\n", soma);
+    }
+    printf("Soma final: %i\n", soma);
+    
+    return 0;
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, igual0=0, pares=0, impares=0, postitivos=0, negativos=0, cont=1;
+    
+    printf("Forneça 5 números inteiros.\n");
+    while(cont<=5){
+        printf("%iº: ", cont);
+        scanf("%i", &a);
+        if(((a%2)==0) && (a!=0)){
+            pares++;
+        }
+        if((a%2)!=0){
+            impares++;
+        }
+        if(a>0){
+            postitivos++;
+        }
+        if(a<0){
+            negativos++;
+        }
+        if(a==0){
+            igual0++;
+        }
+        cont++;
+    }
+    printf("Nº de pares: %i;\n", pares);
+    printf("Nº de ímpares: %i;\n", impares);
+    printf("Nº de postitivos: %i;\n", postitivos);
+    printf("Nº de negativos: %i;\n", negativos);
+    printf("Nº de iguais à 0: %i.\n", igual0);
+    
+
+    return 0;
+}

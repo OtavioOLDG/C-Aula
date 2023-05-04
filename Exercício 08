@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int voto=1, vc1=0, vc2=0, vc3=0, vc4=0, vb=0, vn=0, contV=0;
+    
+    printf("Escolha um dos quatro candidatos e digite seu respectivo número.\nOBS: Caso digite 0, a contagem de votos será finalizada.\n");
+    do
+    {
+        printf("%iº voto: ", contV+1);
+        scanf("%d", &voto);
+        if(voto == 1)
+        {
+        vc1 = vc1 + 1;
+        contV++;
+        }
+        else if(voto == 2)
+        {
+        vc2 = vc2 + 1;
+        contV++;
+        }
+        else if(voto == 3)
+        {
+        vc3 = vc3 + 1;
+        contV++;
+        }
+        else if(voto == 4)
+        {
+        vc4 = vc4 + 1;
+        contV++;
+        }
+        else if(voto == 5)
+        {
+        vn = vn + 1;
+        contV++;
+        }
+        else if(voto == 6)
+        {
+        vb = vb + 1;
+        contV++;
+        }
+        else if((voto > 6) || (voto < 0))
+        {
+        printf("Voto inválido, tente novamente.\n");
+        }
+
+        
+    } while (voto != 0);
+    printf("Total de votos válidos: %d\n", contV);
+    printf("Total de votos do candidato 1: %d\n", vc1);
+    printf("Total de votos do candidato 2: %d\n", vc2);
+    printf("Total de votos do candidato 3: %d\n", vc3);
+    printf("Total de votos do candidato 4: %d\n", vc4);
+    printf("Total de votos nulos: %d\n", vn);
+    printf("Total de votos em branco: %d\n", vb);
+
+    return 0;
+}

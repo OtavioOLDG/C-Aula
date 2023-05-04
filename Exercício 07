@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n, a1, r, cont=0;
+    
+    printf("Escolha\n");
+    printf("A quantidade de números da amostragem: ");
+    scanf("%i", &n);
+    printf("O primeiro número: ");
+    scanf("%i", &a1);
+    printf("A razão da progressão da amostragem: ");
+    scanf("%i", &r);
+    
+    while(cont<n){
+        if(cont<(n-1)){
+            printf("%i, ", a1);
+        }    
+        if(cont==(n-1)){
+            printf("%i.\nFim.", a1);
+        }
+        a1+=r;
+        cont++; 
+    }
+    
+    return 0;
+}

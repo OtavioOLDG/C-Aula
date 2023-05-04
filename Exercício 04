@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float e=1, divisor=1;
+    int n;
+    
+    do{
+        printf("Forneça o valor de N (inteiro e positivo): ");
+        scanf("%i", &n);
+    }while(n<1);
+    
+    while(divisor<=n){
+        printf("%.0fº divisor é = %.3f\n", divisor, (1/divisor));
+        e = e + (1/divisor);
+        divisor++;
+    }
+    printf("Valor de E: %f", e);
+    
+    return 0;
+}

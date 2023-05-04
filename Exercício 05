@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float e=1, contFat=1, fat=1;
+    int n=1, cont=1;
+    
+    do{
+        printf("Forneça o valor de E (inteiro e positivo): ");
+        scanf("%i", &n);
+    }while(n<1);
+    
+    while(cont<=n){
+        while(contFat==cont){
+            fat = fat*contFat;
+            contFat++;
+        }
+        printf("%i! = %.0f\n", cont, fat);
+        e = e + (1/fat);
+        cont++;
+    }
+    printf("%f", e);
+    
+    return 0;
+}

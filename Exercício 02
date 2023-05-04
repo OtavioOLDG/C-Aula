@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n, max, cont=1;
+    
+    printf("Forneça um número para tabuada: ");
+    scanf("%i", &n);
+    printf("Forneça um número máximo de multiplicadores: ");
+    scanf("%i", &max);
+    while(cont<=max){
+        printf("%i x %i = %i\n", n, cont, (n*cont));
+        cont++;
+    }
+    
+    return 0;
+}

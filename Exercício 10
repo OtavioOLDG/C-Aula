@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    float mediaPares=0, cont=0;
+    int n=1;
+    
+    while(n!=0){
+        printf("Informe um número inteiro: ");
+        scanf("%i", &n);
+        if(((n%2) == 0) && (n!=0)){
+            mediaPares+=n;
+            cont++;
+        }
+    }
+    mediaPares/=cont;
+    printf("Média dos números pares informados: %.2f", mediaPares);
+
+    return 0;
+}

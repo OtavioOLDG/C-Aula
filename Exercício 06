@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    float joao=1.5, ze=1.1;
+    int anos=0, anoAtual;
+    
+    printf("Informe o ano atual: ");
+    scanf("%i", &anoAtual);
+    while(ze<joao){
+        ze+=0.03;
+        joao+=0.02;
+        anos++;
+    }
+    anoAtual+=anos;
+    printf("Anos necessários: %i\n", anos);
+    printf("Ano atual: %i\n", anoAtual);
+    printf("Altura João: %.2f\n", joao);
+    printf("Altura Zé: %.2f\n", ze);
+    
+    return 0;
+}

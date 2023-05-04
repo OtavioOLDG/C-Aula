@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n=1, cont=1, contNeg=0;
+    
+    while(n!=0 && cont<=20){
+        printf("Forneça um número: ");
+        scanf("%i", &n);
+        if(n<0){
+            contNeg++;
+        }
+    }
+    printf("Quantidade de números negativos fornecidos: %i.", contNeg);
+    
+    return 0;
+}

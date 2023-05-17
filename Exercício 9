@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    float vetor[2][10];
+    int i, o;
+    
+    printf("Fornça 10 valores\n");
+    for(i=0; i<10; i++){
+        printf("%iº: ", i+1);
+        scanf("%f", &vetor[0][i]);
+        if(vetor[0][i]>0){
+            if((i%2) == 0){
+                vetor[1][i] = (vetor[0][i]/2);
+            }
+            else{
+                vetor[1][i] = (vetor[0][i]*3);
+            }
+        }
+        else{
+            printf("Valor inválido.\n");
+            i--;
+        }
+    }
+    for(i=0; i<2; i++){
+        for(o=0; o<10; o++){
+            printf("%iº valor do vetor %i: %.1f;\n", o+1, i+1, vetor[i][o]);
+        }
+    }
+    
+    return 0;
+}

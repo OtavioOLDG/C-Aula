@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, o=9, vetorA[10], vetorB[10], cont=0;
+    
+    printf("Fornça 10 valores\n");
+    for(i=0; i<10; i++){
+        printf("%iº: ", i+1);
+        scanf("%i", &vetorA[i]);
+        vetorB[o] = vetorA[i];
+        o--;
+    }
+    for(i=0; i<10; i++){
+        if(cont<10){
+            printf("Valor do %iº vetor de A: %i;\n", i+1, vetorA[i]);
+        }
+        else if(cont>=10){
+            printf("Valor do %iº vetor de B: %i;\n", i+1, vetorB[i]);
+        }
+        if(cont==9 && i==9){
+            i = -1;
+        }
+        cont++;
+    }
+    return 0;
+}

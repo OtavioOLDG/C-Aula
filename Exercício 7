@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+    float aluno[3][2], maiorNota, menorNota;
+    int i, o;
+    
+    for(i=0; i<3; i++){
+        for(o=0; o<2; o++){
+            if(o==0){
+                printf("Forneça o código do %iº aluno: ", i+1);
+            }
+            else{
+                printf("Forneça o a nota do %iº aluno: ", i+1);
+            }
+            scanf("%f", &aluno[i][o]);
+            if(aluno[i][o]>maiorNota && o>0){
+                maiorNota = aluno[i][1];
+            }
+            if(menorNota>aluno[i][o] && o>0){
+                menorNota = aluno[i][o];
+            }
+            if(i==0 && o==1){
+                maiorNota = aluno[i][o];
+                menorNota = maiorNota;
+            }
+        }
+    }
+    for(i=0; i<3; i++){
+        for(o=0; o<2; o++){
+            if(maiorNota==aluno[i][o] && o>0){
+                printf("Maior nota foi de %.2f, obtida pelo aluno de código nº %.0f.\n", maiorNota, aluno[i][0]);
+            }
+            if(menorNota==aluno[i][o] && o>0){
+                printf("Menor nota foi de %.2f, obtida pelo aluno de código nº %.0f.\n", menorNota, aluno[i][0]);
+            }
+        }
+    }
+
+    return 0;
+}

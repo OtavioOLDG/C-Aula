@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    int i, o, vetorA[2][10], vetorB[3][10];
+    
+    for(i=0; i<2; i++){
+        printf("Forneça os valores do %iº vetor A.\n", i+1);
+        for(o=0; o<10; o++){
+            printf("%iº: ", o+1);
+            scanf("%i", &vetorA[i][o]);
+        }
+    }
+    
+    for(i=0; i<3; i++){
+        for(o=0; o<10; o++){
+            if(i==0){
+                vetorB[i][o] = (vetorA[0][o] - vetorA[1][o]);
+            }
+            else if(i==1){
+                vetorB[i][o] = (vetorA[0][o] + vetorA[1][o]);
+            }
+            else{
+                vetorB[i][o] = (vetorA[0][o] * vetorA[1][o]);
+            }
+        }
+    }
+    
+    for(i=0; i<3; i++){
+        printf("Valores do %iº vetor de B\n", i+1);
+        for(o=0; o<10; o++){
+            printf("%iº: %i;\n", o+1, vetorB[i][o]);
+        }
+    }
+
+    return 0;
+}

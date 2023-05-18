@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#define TAM 3
+
+struct nomes{
+    char nome[50];
+};
+
+typedef struct nomes nomes;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    nomes lista[10];
+    int i, ok, cont=0;
+    char busca[50];
+    
+    for(i=0; i<3; i++){
+        printf("Insira os dados da pessoa (%i)\n", i+1);
+        puts("Nome: ");
+        scanf("\n");
+        scanf("%50[^\n]s", lista[i].nome);
+        fflush(stdin);
+    }
+    
+    printf("Pesquise um nome: ");
+    scanf("\n");
+    scanf("%50[^\n]s", busca);
+    fflush(stdin);
+    
+    for(i=0; i<3; i++){
+        ok = strcmp(busca, lista[i].nome);
+        if(ok == 0){
+            cont++;
+        }
+    }
+    
+    if(cont>0){
+        printf("ACHEI!");
+    }
+    else{
+        printf("NÃO ACHEI.");
+    }
+    
+
+    return 0;
+}
